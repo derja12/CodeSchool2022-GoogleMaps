@@ -12,7 +12,7 @@
     <div id="app" v-cloak>
         <v-app>
             <v-app-bar app>
-                <v-toolbar-title>Maps Example</v-toolbar-title>
+                <v-toolbar-title>Maps Example - Markers</v-toolbar-title>
             </v-app-bar>
 
             <v-main class="green lighten-5">
@@ -21,7 +21,7 @@
                         <v-text-field 
                             class="mx-16"
                             @keydown.enter="addMarker()" 
-                            label="Address" 
+                            label="New Address" 
                             v-model="addressInput"
                         ></v-text-field>
                     </v-row>
@@ -46,8 +46,8 @@
     </div>
     
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=initMap&v=weekly"
-      defer
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=initMap&v=weekly"
+        defer
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
