@@ -2,6 +2,6 @@
 
 ### Uses:
 
-* Vue/Vuetify
+* Vue / Vuetify
 * Google Maps Javascript API
-* Google Geo
+* Google Geocoding API
