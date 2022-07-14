@@ -27,9 +27,9 @@
                     </v-row>
                     <v-row>
                         <v-col>
-                            <v-sheet v-if="mapIsInitialized" height="600" id="map"></v-sheet>
-                            <v-sheet class="transparent pa-16" v-else height="600">
-                                <v-card loading="green lighten-2">
+                            <v-sheet v-show="mapIsInitialized" height="600" id="map"></v-sheet>
+                            <v-sheet v-if="!mapIsInitialized" class="transparent" height="600">
+                                <v-card class="fill-height" loading="green lighten-2">
                                     <v-card-title>Loading Map</v-card-title>
                                     <v-card-text>
                                         If this is taking a long time, make sure you've
@@ -46,7 +46,7 @@
     </div>
     
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_HERE&callback=initMap&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=initMap&v=weekly"
       defer
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
