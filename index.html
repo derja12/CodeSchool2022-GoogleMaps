@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Maps Example</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app" v-cloak>
+        <v-app>
+            <v-app-bar app>
+                <v-toolbar-title>Maps Example</v-toolbar-title>
+            </v-app-bar>
+
+            <v-main class="green lighten-5">
+                <v-container class="fill-height white">
+                    <v-row>
+                        <v-text-field 
+                            class="mx-16"
+                            @keydown.enter="addMarker()" 
+                            label="Address" 
+                            v-model="addressInput"
+                        ></v-text-field>
+                    </v-row>
+                    <v-row>
+                        <v-col>
+                            <v-sheet v-if="mapIsInitialized" height="600" id="map"></v-sheet>
+                            <v-sheet class="transparent pa-16" v-else height="600">
+                                <v-card loading="green lighten-2">
+                                    <v-card-title>Loading Map</v-card-title>
+                                    <v-card-text>
+                                        If this is taking a long time, make sure you've
+                                        entered in your google api key in the html script tag. It
+                                        will not work until you've provided one
+                                    </v-card-text>
+                                </v-card>
+                            </v-sheet>
+                        </v-col>
+                    </v-row>
+                </v-container>
+            </v-main>
+        </v-app>
+    </div>
+    
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_HERE&callback=initMap&v=weekly"
+      defer
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
